@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Details</title>
+</head>
+<body>
+    <h1>{{ movie.title }}</h1>
+    <p>Rating: {{ movie.rating }}/10</p>
+
+    <h3>Review:</h3>
+    <p>{{ movie.review }}</p>
+
+    <a href="{% url 'movie_list' %}">Back to list</a>
+</body>
+</html>

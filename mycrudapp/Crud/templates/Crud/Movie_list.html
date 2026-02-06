@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>    
+</head>
+<body>
+<h1>My Movie List</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Rating(/10)</th>
+    <th>Review</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for movie in object_list %}
+    <tr>    
+    <td>{{ movie.title }}</td>
+    <td>{{ movie.rating }}/10</td>
+    <td><a href="{% url "movie_view" movie.id %}">view</a></td>
+    <td><a href="{% url "movie_edit" movie.id %}">edit</a></td>
+    <td><a href="{% url "movie_delete" movie.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "movie_new" %}">New</a>
+</body>
+</html>
