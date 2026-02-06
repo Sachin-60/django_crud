@@ -15,13 +15,13 @@ class MovieDetailView(DetailView):
 class MovieCreateView(CreateView):
     model = Movie
     template_name = "Crud/movie_new.html"
-    fields = ['title', 'rating']
+    fields = ['title', 'rating','review']
     success_url = reverse_lazy("movie_list")
 
 class MovieUpdateView(UpdateView):
     model = Movie
     template_name = "Crud/movie_edit.html"
-    fields = ['title', 'rating'] 
+    fields = ['title', 'rating','review'] 
     success_url = reverse_lazy("movie_list")
 
 class MovieDeleteView(DeleteView):
